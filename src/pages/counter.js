@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+
 class counter extends React.Component {
     constructor(){
         super()
@@ -7,7 +8,7 @@ class counter extends React.Component {
     }
     render(){
   return (
-    <div>
+    <div style={{color: this.props.color}}>
         <h1>counter</h1>
         <p>current count: {this.state.count}</p>
         <button onClick={() => this.setState({
