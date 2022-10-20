@@ -17,7 +17,7 @@ export default function Home({data}) {
 }
 
 export const query = graphql`
-  query FisrtQuery {
+  query MyFilesQuery{
     site {
       siteMetadata{
         title
@@ -25,6 +25,4 @@ export const query = graphql`
       }
     }
   }
-
-
 `
