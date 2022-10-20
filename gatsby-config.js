@@ -17,6 +17,7 @@ module.exports = {
 }
 
 module.exports = {
+  pathPrefix: "/",
   siteMetadata: {
     title: "My Cool Website-diving",
     author: "lmxchyy"
