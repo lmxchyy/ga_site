@@ -8,7 +8,6 @@ module.exports = {
   /* Your site config here */
   plugins: [],
 }
-
 module.exports = {
   siteMetadata: {
     title: "My Cool Website-akdiving",
@@ -30,22 +29,24 @@ module.exports = {
       },
     },
   ],
-}
 
-
-
-exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
-  const nodeData = {
-    title: "Test Node",
-    description: "Testing the node ",
-  }
-  const newNode = {
-    ...nodeData,
-    id: createNodeId("TestNode-testid"),
-    internal: {
-      type: "TestNode",
-      contentDigest: createContentDigest(nodeData),
+  plugins: [
+    // You can have multiple instances of this plugin
+    // to read source nodes from different locations on your
+    // filesystem.
+    //
+    // The following sets up the Jekyll pattern of having a
+    // "pages" directory for Markdown files and a "data" directory
+    // for `.json`, `.yaml`, `.csv`.
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+      },
     },
-  }
-  actions.createNode(newNode)
+    
+  ],
 }
+
+
